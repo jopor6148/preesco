@@ -6,3 +6,5 @@
 [27-May-2017 17:12:24 America/Chicago] PHP Fatal error:  Class 'Preesco\Http\Controllers\Controller' not found in /home/preescoc/public_html/preesco/app/Http/Controllers/Auth/LoginController.php on line 9
 [28-May-2017 10:23:54 America/Chicago] PHP Fatal error:  Class 'Preesco\Http\Controllers\Controller' not found in /home/preescoc/public_html/preesco/app/Http/Controllers/Auth/ForgotPasswordController.php on line 9
 [28-May-2017 15:49:16 America/Chicago] PHP Fatal error:  Class 'Preesco\Http\Controllers\Controller' not found in /home/preescoc/public_html/preesco/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[25-Jun-2017 01:22:50 America/Chicago] PHP Fatal error:  Class 'Preesco\Http\Controllers\Controller' not found in /home/preesco/public_html/preesco/app/Http/Controllers/Auth/ResetPasswordController.php on line 9
+[25-Jun-2017 16:35:56 America/Chicago] PHP Fatal error:  Class 'Preesco\Http\Controllers\Controller' not found in /home/preesco/public_html/preesco/app/Http/Controllers/Auth/ForgotPasswordController.php on line 9

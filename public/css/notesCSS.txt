@@ -1,0 +1,2 @@
+#91b104		Verde Principal: 
+#f5f5f5		Fondo body

@@ -25,29 +25,42 @@ Route::get('login', function () {
 
 Route::post('login', 'Login@loginInfo');
 
-Route::group(['middleware' => 'AuthenticateUser'], function(){
-	Route::get('home','Home@index');
+Route::get('home','Home@index');
 
 
-	/**
-				rutas pára examenes
-	**/
-	Route::group(['prefix'=>'aplicaQuiz'], function()
-	{
-	 Route::get('/{idExamen}',function($id){
-		return (new Preesco\Http\Controllers\Cuestionario())->showUser($id);
-	 });
-	});
-
-
-
-	Route::group(['middleware' => 'ValidateAdmin'], function(){
-		Route::get('homeAdmin','HomeAdmin@index');
-		Route::resource('cuestionarios','Cuestionario');
-		Route::get('preguntas','Preguntas@index');
-		Route::post('preguntas','Preguntas@guardarPregunta');
-	});
+/**
+			rutas pára examenes
+**/
+Route::group(['prefix'=>'aplicaQuiz'], function()
+{
+ Route::get('/{idExamen}',function($id){
+	return (new Preesco\Http\Controllers\Cuestionario())->showUser($id);
+ });
 });
+
+// Route::group(['middleware' => 'AuthenticateUser'], function(){
+// 	Route::get('home','Home@index');
+
+
+// 	/**
+// 				rutas pára examenes
+// 	**/
+// 	Route::group(['prefix'=>'aplicaQuiz'], function()
+// 	{
+// 	 Route::get('/{idExamen}',function($id){
+// 		return (new Preesco\Http\Controllers\Cuestionario())->showUser($id);
+// 	 });
+// 	});
+
+
+
+// 	Route::group(['middleware' => 'ValidateAdmin'], function(){
+// 		Route::get('homeAdmin','HomeAdmin@index');
+// 		Route::resource('cuestionarios','Cuestionario');
+// 		Route::get('preguntas','Preguntas@index');
+// 		Route::post('preguntas','Preguntas@guardarPregunta');
+// 	});
+// });
 
 
 /**

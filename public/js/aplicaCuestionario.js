@@ -18,8 +18,6 @@ $(function(){
 
 	$('.botonEnviar').on('click',function(event){
 
-		$(this).css({'display':'none'});
-
 		$('.respuestas input[type="hidden"]').each(function(index,val){
 			if($(this).val() == 'checa'){
 				$checa++;

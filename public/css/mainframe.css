@@ -1,0 +1,36 @@
+.header {
+	background-color: white;
+	border-top: 3px solid #91b104;
+}
+
+header h1{
+	float: left;
+	margin: 20px;
+}
+
+header nav{
+	float: right;
+	padding-top: 30px;
+}
+
+nav li {
+	display: inline;
+	padding: 10px;
+}
+
+nav li a:link {
+    text-decoration: none;
+    color: #91b104;
+}
+nav li a:hover{
+	color: #b1c760;
+	text-decoration: none;
+}
+nav li a:visited{
+	color: #91b104;
+	text-decoration: none;
+}
+nav li a:active{
+	color: #91b104;
+	text-decoration: none;
+}
