@@ -145,6 +145,16 @@ class Cuestionario extends Controller
 							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas']['relB'][$value->idRes]['idRespuesta']=$value->idRes;
 							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas']['relB'][$value->idRes]['rel']=$value->relB;
 							break;
+            case 'lecturaConOpciones':
+							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas'][$value->idRes]['idRespuesta']=$value->idRes;
+							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas'][$value->idRes]['opcion']=$value->opcion;
+							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas'][$value->idRes]['correcta']=$value->correcta;
+							break;
+            case 'verdaderoFalso':
+							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas'][$value->idRes]['idRespuesta']=$value->idRes;
+							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas'][$value->idRes]['opcion']=$value->opcion;
+							$cuestionario['seccion'][$value->idSeccion]['pregunta'][$value->idPregunta]['respuestas'][$value->idRes]['correcta']=$value->correcta;
+							break;
 					}
 
 
@@ -170,7 +180,7 @@ class Cuestionario extends Controller
 						$vp = $this->estucturaPreguntaRelacion ($vp);
 					}
 
-					if($vp['idLectura']!== 'none'){
+					if($vp['tipoPregunta']== 'lecturaConOpciones'){
 						$preguntasLectura[$vp['idLectura']][]=$vp;
 					}else{
 						$preguntas[$cuentaPregunta]=$vp;

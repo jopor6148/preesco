@@ -11,7 +11,6 @@
 |
 */
 
-$dir =DIRECTORY_SEPARATOR;
 
 Route::get('/', function () {
     return view('welcome');

@@ -39,6 +39,9 @@
 								@if ($vp["tipoPregunta"] =="verdaderoFalso")
 									<li>@include('plantillas.preguntas.verdaderoFalso',['pregunta'=>$vp])</li>
 								@endif
+                @if ($vp["tipoPregunta"] =="lecturaConOpciones")
+									<li>@include('plantillas.preguntas.lecturaConOpciones',['pregunta'=>$vp])</li>
+								@endif
 							@empty
 								<p>Sin preguntas cargadas</p>
 							@endforelse
@@ -88,4 +91,3 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 @endsection
-
