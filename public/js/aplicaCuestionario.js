@@ -3,6 +3,13 @@ $nocheca=0;
 $nc=0;
 
 $(function(){
+
+  $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+  });
+
  $('.respuestas input[type="radio"]').change(function(){
 	 $name = $(this).attr('name');
 	 $name = $name.split('-');
@@ -48,6 +55,24 @@ $(function(){
 
 $('.volver').on('click',function(event){
 	window.location.reload();
+});
+
+
+$('.lectura').on('click',function(event){
+  // $('#contenidoModal .modal-body').html($(this).attr('lectura'));
+  $lectura =$(this).attr('lectura');
+  $.post('/aplicaQuiz/damelectura',{lectura:$lectura},'','json')
+  .done(function(data){
+    if(data.error){
+      $('#contenidoModal .modal-body').html('<p> Probelema al tratar de obtener la lectura </p>');
+    }else {
+      $('#contenidoModal .modal-body').html('<p>'+data.respuesta+'</p>');
+    }
+  })
+  .fail(function(err){
+    $('#contenidoModal .modal-body').html('<p> Probelema al tratar de obtener la lectura </p>');
+  });
+  $('#modalLectura').modal('show');
 });
 
 

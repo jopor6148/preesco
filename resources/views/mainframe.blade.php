@@ -7,6 +7,7 @@
 	<meta name="description" content="maestros, preescolar, educacion basica, estudio, capacitacion, simulador, examen, evaluacion docente" />
 	<meta name="keywords" content="desarrollo, docente, docencia, maestros, preescolar, estudio, capacitacion" />
 	<meta name="author" content="Ing. Paulino Figueroa - ing.paulino.figueroa@gmail.com" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="shortcut icon" href="" />
 	<title>@yield('title')</title>
 	<link rel="stylesheet" type="text/css" href="{{ url('css/normalize.css') }}">

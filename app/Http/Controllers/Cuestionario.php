@@ -265,4 +265,17 @@ class Cuestionario extends Controller
 		}
 
 
+    public function dameLectura (Request $request)
+    {
+
+      $respuesta = DB::connection('preesco')->table('lecturas')->where('idLectura', $request->lectura)->get();
+      if(count($respuesta) > 0){
+        return ['error'=>false,'respuesta'=>html_entity_decode($respuesta[0]->lectura)];
+      }
+
+      return ['error'=>true];
+
+    }
+
+
 }
