@@ -61,7 +61,7 @@ $('.volver').on('click',function(event){
 $('.lectura').on('click',function(event){
   // $('#contenidoModal .modal-body').html($(this).attr('lectura'));
   $lectura =$(this).attr('lectura');
-  $.post('/aplicaQuiz/damelectura',{lectura:$lectura},'','json')
+  $.post(location.href+'/../damelectura',{lectura:$lectura},'','json')
   .done(function(data){
     if(data.error){
       $('#contenidoModal .modal-body').html('<p> Probelema al tratar de obtener la lectura </p>');

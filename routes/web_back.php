@@ -33,13 +33,11 @@ Route::get('home','Home@index');
 **/
 Route::group(['prefix'=>'aplicaQuiz'], function()
 {
-
- Route::post('/damelectura',['as'=>'damelectura','uses'=>'Cuestionario@dameLectura']);
-
  Route::get('/{idExamen}',function($id){
 	return (new Preesco\Http\Controllers\Cuestionario())->showUser($id);
 })->where('id','[0-9]+');
 
+ Route::post('/damelectura',['as'=>'damelectura','uses'=>'Cuestionario@dameLectura']);
 
 });
 
