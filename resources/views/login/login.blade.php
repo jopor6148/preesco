@@ -14,8 +14,14 @@
 			<input type="text" name="usuario" placeholder="Nombre de usuario" required="required" value="testU" />
 			<input type="password" name="contrasena" placeholder="Contraseña" required="required" value="123" />
 			<button type="submit" class="btn btn-preesco btn-login">Enviar</button>
-			@if(isset($loginError) && $loginError == true)
-				<p class="errorMsj">Nombre de usuario o contraseña incorrectos</p>
+			@if($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div>
 			@endif
 		</form>
 	</div>

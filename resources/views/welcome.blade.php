@@ -33,7 +33,7 @@
 	        </div>
 	        <div>
 	            <!-- <a href="login">Iniciar Sesión</a> -->
-	            <a class="btn btn-preesco" href="home" role="button">ENTRAR</a>
+	            <a class="btn btn-preesco" href="login" role="button">ENTRAR</a>
 	        </div>
 		</div>
 	</div>
