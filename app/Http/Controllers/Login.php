@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class Login extends Controller{
 
 	public function loginInfo(Request $request){
+
+    
+
 		$selUserResutl = DB::select("SELECT * FROM usuarios WHERE usuario = '{$request->usuario}' AND contrasena = '{$request->contrasena}'");
 
 		//-Se valida si el usuario existe
@@ -37,4 +40,12 @@ class Login extends Controller{
 	private function loginError(){
 
 	}
+
+  public function signOut(Request $request)
+  {
+    session()->flush();
+
+    return redirect('/');
+  }
+
 }

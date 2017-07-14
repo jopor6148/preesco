@@ -11,7 +11,7 @@
 		<div>
 	        <a class="btn btn-preesco" href="cuestionarios/create" role="button">Agregar cuestionario</a>
 		</div>
-	    
+
 	    <hr>
 
 	    @if($numCuestionarios > 0)

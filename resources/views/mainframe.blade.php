@@ -29,6 +29,8 @@
 			<nav>
 				<ul>
 					<li><a href="/home">Home</a></li>
+          <li><a href="/signOut">Out</a></li>
+          <li><span class="glyphicon glyphicon-user"> {{session('nombre').' '.session('apellidos')}} </span></li>
 				</ul>
 			</nav>
 		</header>

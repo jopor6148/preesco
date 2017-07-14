@@ -34,3 +34,11 @@ nav li a:active{
 	color: #91b104;
 	text-decoration: none;
 }
+
+nav li span{
+    text-decoration: none;
+    color: #b1c760;
+    background-color: #f5f5f5;
+    padding: 4px;
+    margin: 5px;
+}

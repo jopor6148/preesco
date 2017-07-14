@@ -20,10 +20,15 @@ Route::get('/', function () {
  */
 //-
 Route::get('login', function () {
+    if(session()->has('idUsuario')){
+      return redirect('home');
+    }
     return view('login.login');
 });
 
 Route::post('login', 'Login@loginInfo');
+
+Route::get('signOut', 'Login@signOut');
 
 Route::get('home','Home@index');
 
