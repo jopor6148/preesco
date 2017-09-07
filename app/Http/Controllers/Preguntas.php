@@ -1,7 +1,6 @@
 <?php
 
 namespace Preesco\Http\Controllers;
-
 use DB;
 use Illuminate\Http\Request;
 
@@ -20,11 +19,11 @@ class Preguntas extends Controller {
 			//-Se muestran las diferentes secciones para definir en cuál se agergarán preguntas.
 			return view('secciones.secciones', ['numSecciones' => count($resSecciones), 'secciones' => $resSecciones]);
 		}
-		
+
 	}
 
 	public function guardarPregunta(Request $request){
-		
+
 		//-Se inserta la pregunta al mismo tiempo que se obtiene el ID que se genere
 		$idPregunta = DB::table('preguntas')->insertGetId([
 			'idSeccion' => $request->idSeccion,
@@ -33,7 +32,7 @@ class Preguntas extends Controller {
 			]);
 
 		//-Se insertan las respuestas de la pregunta
-		DB::insert("INSERT INTO resp_opciones (idPregunta, opcion, correcta) VALUES 
+		DB::insert("INSERT INTO resp_opciones (idPregunta, opcion, correcta) VALUES
 			({$idPregunta}, '{$request->correcta}', 1),
 			({$idPregunta}, '{$request->opcion2}', 0),
 			({$idPregunta}, '{$request->opcion3}', 0),
@@ -76,6 +75,6 @@ class Preguntas extends Controller {
 		} else {
 			return DB::select("SELECT * FROM preguntas");
 		}
-		
+
 	}
 }

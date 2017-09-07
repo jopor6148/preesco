@@ -28,27 +28,9 @@ Route::get('login', function () {
 
 Route::post('login', 'Login@loginInfo');
 
-Route::get('signOut', 'Login@signOut');
-
-Route::get('home','Home@index');
 
 
-/**
-			rutas pára examenes
-**/
-Route::group(['prefix'=>'aplicaQuiz'], function()
-{
-
- Route::post('/damelectura',['as'=>'damelectura','uses'=>'Cuestionario@dameLectura']);
-
- Route::get('/{idExamen}',function($id){
-	return (new Preesco\Http\Controllers\Cuestionario())->showUser($id);
-})->where('id','[0-9]+');
-
-
-});
-
-// Route::group(['middleware' => 'AuthenticateUser'], function(){
+Route::group(['middleware' => 'AuthenticateUser'], function(){
 // 	Route::get('home','Home@index');
 
 
@@ -62,16 +44,38 @@ Route::group(['prefix'=>'aplicaQuiz'], function()
 // 	 });
 // 	});
 
+Route::get('signOut', 'Login@signOut');
+
+Route::get('home','Home@index');
 
 
-// 	Route::group(['middleware' => 'ValidateAdmin'], function(){
-// 		Route::get('homeAdmin','HomeAdmin@index');
-// 		Route::resource('cuestionarios','Cuestionario');
-// 		Route::get('preguntas','Preguntas@index');
-// 		Route::post('preguntas','Preguntas@guardarPregunta');
-// 	});
-// });
+/**
+      rutas pára examenes
+**/
 
+
+	Route::group(['middleware' => 'ValidateAdmin'], function(){
+
+    Route::group(['prefix'=>'aplicaQuiz'], function()
+    {
+
+     Route::post('/damelectura',['as'=>'damelectura','uses'=>'Cuestionario@dameLectura']);
+
+     Route::get('/{idExamen}',function($id){
+      return (new Preesco\Http\Controllers\Cuestionario())->showUser($id);
+    })->where('id','[0-9]+');
+
+
+    });
+
+		Route::get('homeAdmin','HomeAdmin@index');
+		Route::resource('cuestionarios','Cuestionario');
+		Route::get('preguntas','Preguntas@index');
+		Route::post('preguntas','Preguntas@guardarPregunta');
+	});
+
+
+});
 
 /**
  *

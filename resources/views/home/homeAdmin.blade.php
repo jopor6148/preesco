@@ -8,11 +8,11 @@
 @endsection
 
 @section('dynamicContent')
-		<div>
+		{{-- <div>
 	        <a class="btn btn-preesco" href="cuestionarios/create" role="button">Agregar cuestionario</a>
 		</div>
 
-	    <hr>
+	    <hr> --}}
 
 	    @if($numCuestionarios > 0)
 		    <div id="mv-tiles" style="opacity: 1;">
@@ -32,10 +32,12 @@
 				        </div>
 				    </a>
 				@endforeach
+    @endif
+        <a class="mv-tile-add" href="cuestionarios/create" title="Crear Nuevo">
+
+            <div class="mv-title-add" style="direction: ltr;">
+              <span class="glyphicon glyphicon-plus"></span>
+            </div>
+        </a>
 			</div>
-		@else
-			<div>
-				No hay cuestionarios disponibles
-			</div>
-		@endif
 @endsection
